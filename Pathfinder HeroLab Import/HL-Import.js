@@ -1,19 +1,46 @@
 var HLImport = HLImport || (function() {
     'use strict';
-<<<<<<< HEAD
     var version = '0.63.00',
 	lastUpdate = 1457920161,
-=======
-    var version = '0.62',
-	lastUpdate = 1471686461,
->>>>>>> a547d7f1cbdcde0ca0e95ac9f9f217719df4fcdf
 	skillsAttr = ["acrobatics-ability", "acrobatics-cs", "acrobatics-ranks", "acrobatics-class", "acrobatics-ability-mod", "acrobatics-racial", "acrobatics-feat", "acrobatics-item", "acrobatics-size", "acrobatics-acp", "acrobatics-misc", "acrobatics-reqtrain", "artistry-ability", "artistry-cs", "artistry-ranks", "artistry-class", "artistry-ability-mod", "artistry-racial", "artistry-feat", "artistry-item", "artistry-size", "artistry-acp", "artistry-misc", "artistry-reqtrain", "artistry2-ability", "artistry2-cs", "artistry2-ranks", "artistry2-class", "artistry2-ability-mod", "artistry2-racial", "artistry2-feat", "artistry2-item", "artistry2-size", "artistry2-acp", "artistry2-misc", "artistry2-reqtrain", "artistry3-ability", "artistry3-cs", "artistry3-ranks", "artistry3-class", "artistry3-ability-mod", "artistry3-racial", "artistry3-feat", "artistry3-item", "artistry3-size", "artistry3-acp", "artistry3-misc", "artistry3-reqtrain", "appraise-ability", "appraise-cs", "appraise-ranks", "appraise-class", "appraise-ability-mod", "appraise-racial", "appraise-feat", "appraise-item", "appraise-size", "appraise-acp", "appraise-misc", "appraise-reqtrain", "bluff-ability", "bluff-cs", "bluff-ranks", "bluff-class", "bluff-ability-mod", "bluff-racial", "bluff-feat", "bluff-item", "bluff-size", "bluff-acp", "bluff-misc", "bluff-reqtrain", "climb-ability", "climb-cs", "climb-ranks", "climb-class", "climb-ability-mod", "climb-racial", "climb-feat", "climb-item", "climb-size", "climb-acp", "climb-misc", "climb-reqtrain", "craft-ability", "craft-cs", "craft-ranks", "craft-class", "craft-ability-mod", "craft-racial", "craft-feat", "craft-item", "craft-size", "craft-acp", "craft-misc", "craft-reqtrain", "craft2-ability", "craft2-cs", "craft2-ranks", "craft2-class", "craft2-ability-mod", "craft2-racial", "craft2-feat", "craft2-item", "craft2-size", "craft2-acp", "craft2-misc", "craft2-reqtrain", "craft3-ability", "craft3-cs", "craft3-ranks", "craft3-class", "craft3-ability-mod", "craft3-racial", "craft3-feat", "craft3-item", "craft3-size", "craft3-acp", "craft3-misc", "craft3-reqtrain", "diplomacy-ability", "diplomacy-cs", "diplomacy-ranks", "diplomacy-class", "diplomacy-ability-mod", "diplomacy-racial", "diplomacy-feat", "diplomacy-item", "diplomacy-size", "diplomacy-acp", "diplomacy-misc", "diplomacy-reqtrain", "disable-device-ability", "disable-device-cs", "disable-device-ranks", "disable-device-class", "disable-device-ability-mod", "disable-device-racial", "disable-device-feat", "disable-device-item", "disable-device-size", "disable-device-acp", "disable-device-misc", "disable-device-reqtrain", "disguise-ability", "disguise-cs", "disguise-ranks", "disguise-class", "disguise-ability-mod", "disguise-racial", "disguise-feat", "disguise-item", "disguise-size", "disguise-acp", "disguise-misc", "disguise-reqtrain", "escape-artist-ability", "escape-artist-cs", "escape-artist-ranks", "escape-artist-class", "escape-artist-ability-mod", "escape-artist-racial", "escape-artist-feat", "escape-artist-item", "escape-artist-size", "escape-artist-acp", "escape-artist-misc", "escape-artist-reqtrain", "fly-ability", "fly-cs", "fly-ranks", "fly-class", "fly-ability-mod", "fly-racial", "fly-feat", "fly-item", "fly-size", "fly-acp", "fly-misc", "fly-reqtrain", "handle-animal-ability", "handle-animal-cs", "handle-animal-ranks", "handle-animal-class", "handle-animal-ability-mod", "handle-animal-racial", "handle-animal-feat", "handle-animal-item", "handle-animal-size", "handle-animal-acp", "handle-animal-misc", "handle-animal-reqtrain", "heal-ability", "heal-cs", "heal-ranks", "heal-class", "heal-ability-mod", "heal-racial", "heal-feat", "heal-item", "heal-size", "heal-acp", "heal-misc", "heal-reqtrain", "intimidate-ability", "intimidate-cs", "intimidate-ranks", "intimidate-class", "intimidate-ability-mod", "intimidate-racial", "intimidate-feat", "intimidate-item", "intimidate-size", "intimidate-acp", "intimidate-misc", "intimidate-reqtrain", "linguistics-ability", "linguistics-cs", "linguistics-ranks", "linguistics-class", "linguistics-ability-mod", "linguistics-racial", "linguistics-feat", "linguistics-item", "linguistics-size", "linguistics-acp", "linguistics-misc", "linguistics-reqtrain", "lore-ability", "lore-cs", "lore-ranks", "lore-class", "lore-ability-mod", "lore-racial", "lore-feat", "lore-item", "lore-size", "lore-acp", "lore-misc", "lore-reqtrain", "lore2-ability", "lore2-cs", "lore2-ranks", "lore2-class", "lore2-ability-mod", "lore2-racial", "lore2-feat", "lore2-item", "lore2-size", "lore2-acp", "lore2-misc", "lore2-reqtrain", "lore3-ability", "lore3-cs", "lore3-ranks", "lore3-class", "lore3-ability-mod", "lore3-racial", "lore3-feat", "lore3-item", "lore3-size", "lore3-acp", "lore3-misc", "lore3-reqtrain", "knowledge-arcana-ability", "knowledge-arcana-cs", "knowledge-arcana-ranks", "knowledge-arcana-class", "knowledge-arcana-ability-mod", "knowledge-arcana-racial", "knowledge-arcana-feat", "knowledge-arcana-item", "knowledge-arcana-size", "knowledge-arcana-acp", "knowledge-arcana-misc", "knowledge-arcana-reqtrain", "knowledge-dungeoneering-ability", "knowledge-dungeoneering-cs", "knowledge-dungeoneering-ranks", "knowledge-dungeoneering-class", "knowledge-dungeoneering-ability-mod", "knowledge-dungeoneering-racial", "knowledge-dungeoneering-feat", "knowledge-dungeoneering-item", "knowledge-dungeoneering-size", "knowledge-dungeoneering-acp", "knowledge-dungeoneering-misc", "knowledge-dungeoneering-reqtrain", "knowledge-engineering-ability", "knowledge-engineering-cs", "knowledge-engineering-ranks", "knowledge-engineering-class", "knowledge-engineering-ability-mod", "knowledge-engineering-racial", "knowledge-engineering-feat", "knowledge-engineering-item", "knowledge-engineering-size", "knowledge-engineering-acp", "knowledge-engineering-misc", "knowledge-engineering-reqtrain", "knowledge-geography-ability", "knowledge-geography-cs", "knowledge-geography-ranks", "knowledge-geography-class", "knowledge-geography-ability-mod", "knowledge-geography-racial", "knowledge-geography-feat", "knowledge-geography-item", "knowledge-geography-size", "knowledge-geography-acp", "knowledge-geography-misc", "knowledge-geography-reqtrain", "knowledge-history-ability", "knowledge-history-cs", "knowledge-history-ranks", "knowledge-history-class", "knowledge-history-ability-mod", "knowledge-history-racial", "knowledge-history-feat", "knowledge-history-item", "knowledge-history-size", "knowledge-history-acp", "knowledge-history-misc", "knowledge-history-reqtrain", "knowledge-local-ability", "knowledge-local-cs", "knowledge-local-ranks", "knowledge-local-class", "knowledge-local-ability-mod", "knowledge-local-racial", "knowledge-local-feat", "knowledge-local-item", "knowledge-local-size", "knowledge-local-acp", "knowledge-local-misc", "knowledge-local-reqtrain", "knowledge-nature-ability", "knowledge-nature-cs", "knowledge-nature-ranks", "knowledge-nature-class", "knowledge-nature-ability-mod", "knowledge-nature-racial", "knowledge-nature-feat", "knowledge-nature-item", "knowledge-nature-size", "knowledge-nature-acp", "knowledge-nature-misc", "knowledge-nature-reqtrain", "knowledge-nobility-ability", "knowledge-nobility-cs", "knowledge-nobility-ranks", "knowledge-nobility-class", "knowledge-nobility-ability-mod", "knowledge-nobility-racial", "knowledge-nobility-feat", "knowledge-nobility-item", "knowledge-nobility-size", "knowledge-nobility-acp", "knowledge-nobility-misc", "knowledge-nobility-reqtrain", "knowledge-planes-ability", "knowledge-planes-cs", "knowledge-planes-ranks", "knowledge-planes-class", "knowledge-planes-ability-mod", "knowledge-planes-racial", "knowledge-planes-feat", "knowledge-planes-item", "knowledge-planes-size", "knowledge-planes-acp", "knowledge-planes-misc", "knowledge-planes-reqtrain", "knowledge-religion-ability", "knowledge-religion-cs", "knowledge-religion-ranks", "knowledge-religion-class", "knowledge-religion-ability-mod", "knowledge-religion-racial", "knowledge-religion-feat", "knowledge-religion-item", "knowledge-religion-size", "knowledge-religion-acp", "knowledge-religion-misc", "knowledge-religion-reqtrain", "perception-ability", "perception-cs", "perception-ranks", "perception-class", "perception-ability-mod", "perception-racial", "perception-feat", "perception-item", "perception-size", "perception-acp", "perception-misc", "perception-reqtrain", "perform-ability", "perform-cs", "perform-ranks", "perform-class", "perform-ability-mod", "perform-racial", "perform-feat", "perform-item", "perform-size", "perform-acp", "perform-misc", "perform-reqtrain", "perform2-ability", "perform2-cs", "perform2-ranks", "perform2-class", "perform2-ability-mod", "perform2-racial", "perform2-feat", "perform2-item", "perform2-size", "perform2-acp", "perform2-misc", "perform2-reqtrain", "perform3-ability", "perform3-cs", "perform3-ranks", "perform3-class", "perform3-ability-mod", "perform3-racial", "perform3-feat", "perform3-item", "perform3-size", "perform3-acp", "perform3-misc", "perform3-reqtrain", "profession-ability", "profession-cs", "profession-ranks", "profession-class", "profession-ability-mod", "profession-racial", "profession-feat", "profession-item", "profession-size", "profession-acp", "profession-misc", "profession-reqtrain", "profession2-ability", "profession2-cs", "profession2-ranks", "profession2-class", "profession2-ability-mod", "profession2-racial", "profession2-feat", "profession2-item", "profession2-size", "profession2-acp", "profession2-misc", "profession2-reqtrain", "profession3-ability", "profession3-cs", "profession3-ranks", "profession3-class", "profession3-ability-mod", "profession3-racial", "profession3-feat", "profession3-item", "profession3-size", "profession3-acp", "profession3-misc", "profession3-reqtrain", "ride-ability", "ride-cs", "ride-ranks", "ride-class", "ride-ability-mod", "ride-racial", "ride-feat", "ride-item", "ride-size", "ride-acp", "ride-misc", "ride-reqtrain", "sense-motive-ability", "sense-motive-cs", "sense-motive-ranks", "sense-motive-class", "sense-motive-ability-mod", "sense-motive-racial", "sense-motive-feat", "sense-motive-item", "sense-motive-size", "sense-motive-acp", "sense-motive-misc", "sense-motive-reqtrain", "sleight-of-hand-ability", "sleight-of-hand-cs", "sleight-of-hand-ranks", "sleight-of-hand-class", "sleight-of-hand-ability-mod", "sleight-of-hand-racial", "sleight-of-hand-feat", "sleight-of-hand-item", "sleight-of-hand-size", "sleight-of-hand-acp", "sleight-of-hand-misc", "sleight-of-hand-reqtrain", "spellcraft-ability", "spellcraft-cs", "spellcraft-ranks", "spellcraft-class", "spellcraft-ability-mod", "spellcraft-racial", "spellcraft-feat", "spellcraft-item", "spellcraft-size", "spellcraft-acp", "spellcraft-misc", "spellcraft-reqtrain", "stealth-ability",  "stealth-cs", "stealth-ranks", "stealth-class", "stealth-ability-mod", "stealth-racial", "stealth-feat", "stealth-item", "stealth-size", "stealth-acp", "stealth-misc", "stealth-reqtrain", "survival-ability", "survival-cs", "survival-ranks", "survival-class", "survival-ability-mod", "survival-racial", "survival-feat", "survival-item", "survival-size", "survival-acp", "survival-misc", "survival-reqtrain", "swim-ability", "swim-cs", "swim-ranks", "swim-class", "swim-ability-mod", "swim-racial", "swim-feat", "swim-item", "swim-size", "swim-acp", "swim-misc", "swim-reqtrain", "use-magic-device-ability", "use-magic-device-cs", "use-magic-device-ranks", "use-magic-device-class", "use-magic-device-ability-mod", "use-magic-device-racial", "use-magic-device-feat", "use-magic-device-item", "use-magic-device-size", "use-magic-device-acp", "use-magic-device-misc", "use-magic-device-reqtrain", "misc-skill-0-ability", "misc-skill-0-cs", "misc-skill-0-ranks", "misc-skill-0-class", "misc-skill-0-ability-mod", "misc-skill-0-racial", "misc-skill-0-feat", "misc-skill-0-item", "misc-skill-0-size", "misc-skill-0-acp", "misc-skill-0-misc", "misc-skill-0-reqtrain", "misc-skill-1-ability", "misc-skill-1-cs", "misc-skill-1-ranks", "misc-skill-1-class", "misc-skill-1-ability-mod", "misc-skill-1-racial", "misc-skill-1-feat", "misc-skill-1-item", "misc-skill-1-size", "misc-skill-1-acp", "misc-skill-1-misc", "misc-skill-1-reqtrain", "misc-skill-2-ability", "misc-skill-2-cs", "misc-skill-2-ranks", "misc-skill-2-class", "misc-skill-2-ability-mod", "misc-skill-2-racial", "misc-skill-2-feat", "misc-skill-2-item", "misc-skill-2-size", "misc-skill-2-acp", "misc-skill-2-misc", "misc-skill-2-reqtrain", "misc-skill-3-ability", "misc-skill-3-cs", "misc-skill-3-ranks", "misc-skill-3-class", "misc-skill-3-ability-mod", "misc-skill-3-racial", "misc-skill-3-feat", "misc-skill-3-item", "misc-skill-3-size", "misc-skill-3-acp", "misc-skill-3-misc", "misc-skill-3-reqtrain", "misc-skill-4-ability", "misc-skill-4-cs", "misc-skill-4-ranks", "misc-skill-4-class", "misc-skill-4-ability-mod", "misc-skill-4-racial", "misc-skill-4-feat", "misc-skill-4-item", "misc-skill-4-size", "misc-skill-4-acp", "misc-skill-4-misc", "misc-skill-4-reqtrain", "misc-skill-5-ability", "misc-skill-5-cs", "misc-skill-5-ranks", "misc-skill-5-class", "misc-skill-5-ability-mod", "misc-skill-5-racial", "misc-skill-5-feat", "misc-skill-5-item", "misc-skill-5-size", "misc-skill-5-acp", "misc-skill-5-misc", "misc-skill-5-reqtrain", "craft-name", "craft2-name", "craft3-name", "lore-name", "perform-name", "perform2-name", "perform3-name", "profession-name", "profession2-name", "profession3-name", "misc-skill-0-name", "misc-skill-1-name", "misc-skill-2-name", "misc-skill-3-name", "misc-skill-4-name", "misc-skill-5-name", "acrobatics-macro", "artistry-macro", "appraise-macro", "bluff-macro", "climb-macro", "craft-macro", "craft2-macro", "craft3-macro", "diplomacy-macro", "disable-Device-macro", "disguise-macro", "escape-Artist-macro", "fly-macro", "handle-Animal-macro", "heal-macro", "intimidate-macro", "linguistics-macro", "lore-macro", "knowledge-arcana-macro", "knowledge-dungeoneering-macro", "knowledge-engineering-macro", "knowledge-geography-macro", "knowledge-history-macro", "knowledge-local-macro", "knowledge-nature-macro", "knowledge-nobility-macro", "knowledge-planes-macro", "knowledge-religion-macro", "perception-macro", "perform-macro", "perform2-macro", "perform3-macro", "profession-macro", "profession2-macro", "profession3-macro", "ride-macro", "sense-Motive-macro", "sleight-of-Hand-macro", "spellcraft-macro", "stealth-macro", "survival-macro", "swim-macro", "use-magic-device-macro", "misc-skill-0-macro", "misc-skill-1-macro", "misc-skill-2-macro", "misc-skill-3-macro", "misc-skill-4-macro", "misc-skill-5-macro"],
 
+	/**************************************************************
+	 *            Parsing/Manipulation Utility Functions
+	 **************************************************************/
+	/**
+	 * Formats JSON objects into an array. Returns an empty
+	 * array if jsonObjects is undefined.  If jsonObjects is 
+	 * already an Array no change is made.
+	 * 
+	 * @param  {} jsonObjects JSON objects 
+	 */
+	arrayify = function (jsonObjects) {
+		if (_.isUndefined(jsonObjects))
+			return new Array();
+		if (Array.isArray(jsonObjects))
+			return jsonObjects;
+		return new Array(jsonObjects);
+	},
+
+	/**
+	 * Searches the provided string using the regular expression.
+	 * Return the index of the first match or -1 if no match found.
+	 * 
+	 * see: http://www.w3schools.com/jsref/jsref_search.asp for more
+	 * info on JavaScript.search()
+	 * 
+	 * @param  {} str String to search.
+	 * @param  {} regex Regular expression to use.
+	 * @param  {} startpos Offset position to use when searching in the string.
+	 */
 	regexIndexOf = function(str, regex, startpos) {
 		var indexOf = str.substring(startpos || 0).search(regex);
 		return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
 	},
 
+	/**
+	 * Generates a universally unique identifier.
+	 */
 	generateUUID = (function() {
 		var a = 0, b = [];
 		return function() {
@@ -41,11 +68,20 @@ var HLImport = HLImport || (function() {
 		};
 	}()),
 
+	/**
+	 * Generate a unique row ID replacing underlines with "Z"
+	 */
 	generateRowID = function () {
 		"use strict";
 		return generateUUID().replace(/_/g, "Z");
 	},
 
+	/**
+	 * Takes an array of objects and concatenates their "Name"
+	 * properties into a comma separated list.
+	 * 
+	 * @param  {} objArray  Array of objects with _name properties.
+	 */
 	buildNameList = function (objArray)
 	{
 		var list = "";
@@ -62,6 +98,12 @@ var HLImport = HLImport || (function() {
 		return list;
 	},
 
+	/**
+	 * Takes an array of Roll20 objects and concatenates their "ShortName"
+	 * properties into a comma separated list
+	 * 
+	 * @param  {} objArray  Array of roll20 objects
+	 */
 	buildShortNameList = function (objArray)
 	{
 		var list = "";
@@ -78,16 +120,37 @@ var HLImport = HLImport || (function() {
 		return list;
 	},
 
-	setAttr = function (character,attribute,value)
+	/**
+	 * Takes an array of objects and makes notes out of the
+	 * "Name" and "Description" properties of each object.
+	 * 
+	 * @param  {} objArray  Array of objects with _name and _description properties.
+	 */
+	buildNameAndDescriptionNotes = function (objArray)
 	{
-		var attrObjs = findObjs({ _type: "attribute", _characterid: character.get("_id"), name: attribute });
-
-		if (attrObjs.length > 0)
-			attrObjs[0].set("current",value);
+		var notes = "";
+		var i = 1;
+		if (objArray.length > 0)
+			notes = objArray[0]._name + ": " + objArray[0].description;
 		else
-			createObj("attribute", { name: attribute, _characterid: character.get("_id"), current: value });
+			return "";
+		while (i < objArray.length)
+		{
+			notes += "\n" + objArray[i]._name + ": " + objArray[i].description;
+			i++;
+		}
+		return notes;
 	},
 
+	/**
+	 * Returns JavaScript.parseInt value if 
+	 * provided num parameter is defined.  Returns
+	 * "" if num is undefined.
+	 * 
+	 * Note: +/- are ignored when parsing.
+	 * 
+	 * @param  {} num Number to parse.
+	 */
 	parseNum = function (num)
 	{
 		if (_.isUndefined(num) || num === "")
@@ -95,65 +158,12 @@ var HLImport = HLImport || (function() {
 		return parseInt(num);
 	},
 
-	importSaves = function (character,saves)
-	{
-		// Since the XML doesn't break this down by class, add it all to class 0
-		var i = 0;
-		var saveNotes = saves.allsaves.situationalmodifiers._text;
-		for (i = 0; i < saves.save.length; i++)
-		{
-			var save = saves.save[i];
-			var abbr = save._abbr;
-			
-			setAttr(character,"class-0-"+abbr,parseNum(save._base));
-			setAttr(character,abbr+"-resist",parseNum(save._fromresist));
-			setAttr(character,abbr+"-misc",(parseNum(save._save)-parseNum(save._base)-parseNum(save._fromresist)-parseNum(save._fromattr)));
-			
-			if (save.situationalmodifiers._text !== "" && saveNotes.indexOf(save.situationalmodifiers._text) === -1)
-				saveNotes = saveNotes + "\n**"+abbr+":** " + save.situationalmodifiers._text;
-				
-		}
-		setAttr(character,"Save-notes",saveNotes.trim());
-	},
-
-	importAbilityScores = function (character,attributes)
-	{
-		attributes.forEach(function(abScore) {
-			var abName = abScore._name.substr(0,3).toUpperCase();
-			var base = parseNum(abScore.attrvalue._base);
-			var modifier = parseNum(abScore.attrvalue._modified) - base;  // Modifier is the total difference between what HL is reporting as the character's base ability score and the final modified ability score
-			setAttr(character, abName+"-base", base);
-			// If the modifier is positive, assume it's an enhancement bonus; otherwise, assume it's a penalty
-			if (modifier > 0)
-				setAttr(character, abName+"-enhance", modifier);
-			else
-				setAttr(character, abName+"-penalty", modifier);
-		});
-	},
-
-	importClasses = function (character, classes)
-	{
-		var classList = new Object();
-		
-		var i = 0;
-		var classObj;
-		while (i < classes.length)
-		{
-			classObj = classes[i];
-
-			// We can only handle 5 classes
-			if (i >= 5)
-				return;
-			classList[classObj._name.replace(/\(([^\)]+)\)/g,"").replace("(","").replace(")","").trim()] = classObj;
-			setAttr(character,"class-"+i+"-name",classObj._name);
-			setAttr(character,"class-"+i+"-level",classObj._level);
-			
-			i++;
-		}
-
-		return classList;
-	},
-
+	/**
+	 * Convert textual size description to numeric value
+	 * for the character sheet.
+	 * 
+	 * @param  {} size Textual description of character size.
+	 */
 	getSizeMod = function (size)
 	{
 		switch(size.toLowerCase())
@@ -178,7 +188,132 @@ var HLImport = HLImport || (function() {
 				return 0;
 		}
 	},
-	
+
+	/**************************************************************
+	 *            Character Modification Functions
+	 **************************************************************/
+	/**
+	 * Sets an attribute on the character.
+	 * 
+	 * @param  {} character Roll20 Character Object
+	 * @param  {} attribute Attribute Name
+	 * @param  {} value Attribute Value
+	 */
+	setAttr = function (character,attribute,value)
+	{
+		var attrObjs = findObjs({ _type: "attribute", _characterid: character.get("_id"), name: attribute });
+
+		if (attrObjs.length > 0)
+			attrObjs[0].set("current",value);
+		else
+			createObj("attribute", { name: attribute, _characterid: character.get("_id"), current: value });
+	},
+
+	/**
+	 * Adds a macro and button to the character.
+	 * 
+	 * @param  {} character Roll20 Character Object
+	 * @param  {} name Name of macro.
+	 * @param  {} desc Description of Macro.
+	 * @param  {} action Macro text.
+	 * @param  {} isTokenAct True if should appear in macro toolbar.
+	 */
+	addAbility = function(character, name, desc, action, isTokenAct) {
+		createObj("ability", {
+			name: name,
+			description: desc,
+			action: action,
+			istokenaction: isTokenAct,
+			characterid: character.get("_id")
+			});
+	},
+
+	/**************************************************************
+	 *              Character Import Functions
+	 **************************************************************/
+	/**
+	 * Imports Saves into Roll20 character.
+	 * 
+	 * @param  {} character Roll20 Character.
+	 * @param  {} saves Array of save objects. 
+	 */
+	importSaves = function (character,saves)
+	{
+		// Since the XML doesn't break this down by class, add it all to class 0
+		var i = 0;
+		var saveNotes = saves.allsaves.situationalmodifiers._text;
+		for (i = 0; i < saves.save.length; i++)
+		{
+			var save = saves.save[i];
+			var abbr = save._abbr;
+			
+			setAttr(character,"class-0-"+abbr,parseNum(save._base));
+			setAttr(character,abbr+"-resist",parseNum(save._fromresist));
+			setAttr(character,abbr+"-misc",(parseNum(save._save)-parseNum(save._base)-parseNum(save._fromresist)-parseNum(save._fromattr)));
+			
+			if (save.situationalmodifiers._text !== "" && saveNotes.indexOf(save.situationalmodifiers._text) === -1)
+				saveNotes = saveNotes + "\n**"+abbr+":** " + save.situationalmodifiers._text;
+				
+		}
+		setAttr(character,"Save-notes",saveNotes.trim());
+	},
+
+	/**
+	 * Imports Attributes into Roll20 character.
+	 * 
+	 * @param  {} character Roll20 Character.
+	 * @param  {} attributes Array of attribute objects. 
+	 */
+	importAttributes = function (character,attributes)
+	{
+		attributes.forEach(function(abScore) {
+			var abName = abScore._name.substr(0,3).toUpperCase();
+			var base = parseNum(abScore.attrvalue._base);
+			var modifier = parseNum(abScore.attrvalue._modified) - base;  // Modifier is the total difference between what HL is reporting as the character's base ability score and the final modified ability score
+			setAttr(character, abName+"-base", base);
+			// If the modifier is positive, assume it's an enhancement bonus; otherwise, assume it's a penalty
+			if (modifier > 0)
+				setAttr(character, abName+"-enhance", modifier);
+			else
+				setAttr(character, abName+"-penalty", modifier);
+		});
+	},
+
+	/**
+	 * Imports Classes into Roll20 character.
+	 * 
+	 * @param  {} character Roll20 Character.
+	 * @param  {} classes Array of class objects. 
+	 */
+	importClasses = function (character, classes)
+	{
+		var classList = new Object();
+		
+		var i = 0;
+		var classObj;
+		while (i < classes.length)
+		{
+			classObj = classes[i];
+
+			// We can only handle 5 classes
+			if (i >= 5)
+				return;
+			classList[classObj._name.replace(/\(([^\)]+)\)/g,"").replace("(","").replace(")","").trim()] = classObj;
+			setAttr(character,"class-"+i+"-name",classObj._name);
+			setAttr(character,"class-"+i+"-level",classObj._level);
+			
+			i++;
+		}
+
+		return classList;
+	},
+
+	/**
+	 * Imports initiative settings into Roll20 character.
+	 * 
+	 * @param  {} character Roll20 Character.
+	 * @param  {} classes Init object. 
+	 */
 	importInit = function(character,initObj)
 	{
 		setAttr(character,"init-misc",parseNum(initObj._total)-parseNum(initObj._attrtext));
@@ -268,6 +403,16 @@ var HLImport = HLImport || (function() {
 		});
 	},
 
+	importClassAbilities = function(character,otherspecials)
+	{
+		otherspecials.forEach(function(special)
+		{
+			var row = getOrMakeRowID(character,"repeating_class-ability_",special._name);
+			setAttr(character,"repeating_class-ability_"+row+"_name",special._name);
+			setAttr(character,"repeating_class-ability_"+row+"_description",special.description);
+		});
+	},
+
 	importMelee = function(character,melee)
 	{
 		melee.forEach(function(weapon)
@@ -321,19 +466,9 @@ var HLImport = HLImport || (function() {
 	{
 		traits.forEach(function(trait)
 		{
-			var row = getOrMakeRowID(character,"repeating_trait_",trait._name);
+			var row = getOrMakeRowID(character,"repeating_racial-trait_",trait._name);
 			setAttr(character,"repeating_racial-trait_"+row+"_name",trait._name);
 			setAttr(character,"repeating_racial-trait_"+row+"_description",trait.description);
-		});
-	},
-
-	importRacialBonus = function(character,skillabilities)
-	{
-		skillabilities.forEach(function(special)
-		{
-			var row = getOrMakeRowID(character,"repeating_trait_",special._name);
-			setAttr(character,"repeating_racial-trait_"+row+"_name",special._name);
-			setAttr(character,"repeating_racial-trait_"+row+"_description",special.description);
 		});
 	},
 
@@ -657,16 +792,6 @@ var HLImport = HLImport || (function() {
 		return ACP;
 	},
 	
-	// Make sure "stuff" is an array
-	arrayify = function(stuff)
-	{
-		if (_.isUndefined(stuff))
-			return new Array();
-		if (Array.isArray(stuff))
-			return stuff;
-		return new Array(stuff);
-	},
-
 	// Import spellclasses; presence in spellclasses node means it's a spellcaster, but some of the data is in the classes node
 	importSpellClasses = function (character,spellclasses,classes,abScores)
 	{
@@ -876,24 +1001,267 @@ var HLImport = HLImport || (function() {
 
 	importCharacter = function (characterObj,token)
 	{
+
+		// Character Attributes
 		var R20character = findObjs({ _type: "character", name: characterObj._name });
-		if (R20character.length === 0)
+		if (R20character.length === 0){
 			R20character = createObj("character", { name: characterObj._name });
-		else
+		} else {
 			R20character = R20character[0];
+		}	
+		if (characterObj._role === "npc")
+		{
+			setAttr(R20character,"is_npc", "1");			
+		} else {
+			setAttr(R20character,"is_npc", "0");
+		}
+		setAttr(R20character,"player-name",characterObj._playername);
 
-		importAbilityScores(R20character,characterObj.attributes.attribute);
-		importSaves(R20character,characterObj.saves);
+		// Import Book info - (TODO If Required)
 
+		// Import Race Attributes
+		setAttr(R20character,"race",characterObj.race._racetext.substr(0,1).toUpperCase()+characterObj.race._racetext.substr(1,1000));
+
+		// Import Alignment Attributes
+		setAttr(R20character,"alignment",characterObj.alignment._name);
+
+		// Import Templates - (TODO If Required)
+
+		// Import size
+		var size = getSizeMod(characterObj.size._name);
+		setAttr(R20character,"size",size);
+
+		// Import Deity
+		setAttr(R20character,"deity",characterObj.deity._name);
+
+		// Import Challenge Rating
+		if (characterObj._role === "npc")
+		{
+			setAttr(R20character,"npc-cr",characterObj.challengerating._text.replace("CR ",""));
+		}
+
+		// Import XP Awared
+		if (characterObj._role === "npc")
+		{
+			setAttr(R20character,"npc-xp",characterObj.xpaward._value);
+		}
+
+		// Import Classes
 		var classes;
-		var spellClasses;
 		if (!_.isUndefined(characterObj.classes.class))
 		{
 			// Class will be an array if multiclassed, but a single object if single-classed; make it an array, just to be safe
 			characterObj.classes.class = arrayify(characterObj.classes.class);
 			classes = importClasses(R20character,characterObj.classes.class);
+		}
+		
+		// Import Factions - (TODO If Required)
 
-			// Cory G. - Do not do the following if class has no spellclasses
+		// Import Types
+		var types = "";
+		if (characterObj._role === "npc") {
+			types = buildNameList(arrayify(characterObj.types.type));
+			if (!_.isUndefined(characterObj.subtypes.subtype)){
+				types = types + " (" + buildNameList(arrayify(characterObj.subtypes.subtype)) + ")"; 
+			}			 
+			setAttr(R20character,"npc-type", types);
+		}
+
+		// Import Hero Points - (TODO If Required)
+
+		// Import senses
+		if (!_.isUndefined(characterObj.senses.special))
+		{
+			characterObj.senses.special = arrayify(characterObj.senses.special);
+			setAttr(R20character,"vision", buildShortNameList(characterObj.senses.special));
+		}
+		
+		// Import Auras - (TODO If Required)
+
+		// Import Favoured Classes
+		if (!_.isUndefined(characterObj.favoredclasses.favoredclass))
+		{
+			characterObj.favoredclasses.favoredclass = arrayify(characterObj.favoredclasses.favoredclass);
+			setAttr(R20character,"class-favored", buildNameList(characterObj.favoredclasses.favoredclass));
+		}
+
+		// Import Health
+		// Set max hp; remove hp from Con mod first, since the sheet will add that in
+		// Since the XML doesn't break this down by class, add it all to class 0
+		var level = calcHitDice(characterObj.health._hitdice);
+		setAttr(R20character,"class-0-hp",(parseNum(characterObj.health._hitpoints) - (level * parseNum(characterObj.attributes.attribute[2].attrbonus._modified))));
+		var racialHD = level - parseNum(characterObj.classes._level);
+		if (racialHD > 0)
+			setAttr(R20character,"class-5-level",racialHD);
+
+		// Import XP
+		setAttr(R20character,"experience",parseFloat(characterObj.xp._total));
+
+		// Import Money
+		setAttr(R20character,"CP",characterObj.money._cp);
+		setAttr(R20character,"SP",characterObj.money._sp);
+		setAttr(R20character,"GP",characterObj.money._gp);
+		setAttr(R20character,"PP",characterObj.money._pp);
+
+		// Import Personal
+		setAttr(R20character,"gender",characterObj.personal._gender);
+		setAttr(R20character,"age",characterObj.personal._age);
+		setAttr(R20character,"height",characterObj.personal.charheight._text);
+		setAttr(R20character,"weight",characterObj.personal.charweight._text);
+		setAttr(R20character,"hair",characterObj.personal._hair);
+		setAttr(R20character,"eyes",characterObj.personal._eyes);
+		setAttr(R20character,"skin",characterObj.personal._skin);
+
+		// Import languages
+		if (!_.isUndefined(characterObj.languages.language))
+		{
+			characterObj.languages.language = arrayify(characterObj.languages.language);
+			setAttr(R20character,"languages", buildNameList(characterObj.languages.language));
+		}
+
+		// Import Attributes
+		importAttributes(R20character,characterObj.attributes.attribute);
+
+		// Import Saves
+		importSaves(R20character,characterObj.saves);
+
+		// Import Special Defenses 
+		if (!_.isUndefined(characterObj.defensive.special))
+		{
+			characterObj.defensive.special = arrayify(characterObj.defensive.special);
+			setAttr(R20character,"cmd-notes", buildNameAndDescriptionNotes(characterObj.defensive.special));
+		}
+
+		// Import Damage Reduction
+		if (!_.isUndefined(characterObj.damagereduction.special))
+		{
+			characterObj.damagereduction.special = arrayify(characterObj.damagereduction.special);
+			setAttr(R20character,"DR", buildShortNameList(characterObj.damagereduction.special));
+		}
+
+		// Import immunities
+		if (!_.isUndefined(characterObj.immunities.special))
+		{
+			characterObj.immunities.special = arrayify(characterObj.immunities.special);
+			setAttr(R20character,"immunities", buildShortNameList(characterObj.immunities.special));
+		}
+
+		// Import resistances
+		if (!_.isUndefined(characterObj.resistances.special))
+		{
+			characterObj.resistances.special = arrayify(characterObj.resistances.special);
+			setAttr(R20character,"resistances", buildShortNameList(characterObj.resistances.special));
+		}
+
+		// Import Weaknesses
+		if (!_.isUndefined(characterObj.weaknesses.special))
+		{
+			characterObj.weaknesses.special = arrayify(characterObj.weaknesses.special);
+			setAttr(R20character,"weaknesses", buildShortNameList(characterObj.weaknesses.special));
+		}
+
+		// Import Armor Class (Not required.  Calculated by character sheet.)
+		
+		
+		// Import Armor
+		if (!_.isUndefined(characterObj.defenses.armor))
+		{
+			characterObj.defenses.armor = arrayify(characterObj.defenses.armor);
+			importArmor(R20character,characterObj.defenses.armor);
+		}
+
+		// Import penalties
+		characterObj.penalties.penalty = arrayify(characterObj.penalties.penalty);
+		var ACP = importPenalties(R20character,characterObj.penalties.penalty);
+
+		// Import Combat Maneuvers (Not required.  Calculated by character sheet.)
+
+		// Import Initiative
+		importInit(R20character,characterObj.initiative);
+
+		// Import movement
+		setAttr(R20character,"speed-base",characterObj.movement.basespeed._text);
+
+		// Import Encumberance (Not required.  Calculated by character sheet.)
+
+		// Import skills
+		characterObj.skills.skill = arrayify(characterObj.skills.skill);
+		importSkills(R20character,characterObj.skills.skill,size,ACP);
+
+		// Import Skill abilities
+		if (!_.isUndefined(characterObj.skillabilities.special))
+		{
+			characterObj.skillabilities.special = arrayify(characterObj.skillabilities.special);
+			importSkillAbilities(R20character,characterObj.skillabilities.special);
+		}
+
+		// Import feats
+		if (!_.isUndefined(characterObj.feats.feat))
+		{
+			characterObj.feats.feat = arrayify(characterObj.feats.feat);
+			importFeats(R20character,characterObj.feats.feat);
+		}
+
+		// Import traits
+		if (!_.isUndefined(characterObj.traits.trait))
+		{
+			characterObj.traits.trait = arrayify(characterObj.traits.trait);
+			importTraits(R20character,characterObj.traits.trait);
+		}
+
+		// Import Flaws - (TODO If Required)
+
+		// Import Skill Tricks - (TODO If Required)
+
+		// Import Animal Tricks - (TODO If Required)
+
+		// Import attacks
+		setAttr(R20character,"class-0-bab",parseNum(characterObj.attack._baseattack));
+		if (!_.isUndefined(characterObj.attack.special))
+		{
+			characterObj.attack.special = arrayify(characterObj.attack.special);
+			importRacialTraits(R20character,characterObj.attack.special);
+		}
+
+		// Import Melee Weapons
+		if (!_.isUndefined(characterObj.melee.weapon))
+		{
+			characterObj.melee.weapon = arrayify(characterObj.melee.weapon);
+			importMelee(R20character,characterObj.melee.weapon);
+		}
+
+		// Import Ranged Weapons
+		if (!_.isUndefined(characterObj.ranged.weapon))
+		{
+			characterObj.ranged.weapon = arrayify(characterObj.ranged.weapon);
+			importRanged(R20character,characterObj.ranged.weapon);
+		}
+
+		// Import Magic Items - (TODO If Required)
+
+		// Import gear
+		if (!_.isUndefined(characterObj.gear.item))
+		{
+			characterObj.gear.item = arrayify(characterObj.gear.item);
+			importGear(R20character,characterObj.gear.item);
+		}
+
+		// Import Spelllike abilities - (TODO If Required)
+
+		// Import Tracked Resources - (TODO If Required)
+
+		// Import Other Specials
+
+		if (!_.isUndefined(characterObj.otherspecials.special))
+		{
+			characterObj.otherspecials.special = arrayify(characterObj.otherspecials.special);
+			importClassAbilities(R20character, characterObj.otherspecials.special);
+		}
+
+		// Import Spells
+		var spellClasses;
+		if (!_.isUndefined(characterObj.classes.class))
+		{
 			if (!_.isUndefined(characterObj.spellclasses.spellclass))
 			{
 				characterObj.spellclasses.spellclass = arrayify(characterObj.spellclasses.spellclass);
@@ -916,177 +1284,29 @@ var HLImport = HLImport || (function() {
 			}	
 		}
 		
-		setAttr(R20character,"experience",parseFloat(characterObj.xp._total));
+		// Import Journals - (TODO If Required)
 
-		setAttr(R20character,"class-0-bab",parseNum(characterObj.attack._baseattack));
-		
-		if (!_.isUndefined(characterObj.feats.feat))
-		{
-			characterObj.feats.feat = arrayify(characterObj.feats.feat);
-			importFeats(R20character,characterObj.feats.feat);
-		}
+		// Import Images - (TODO If Required)
 
-		if (!_.isUndefined(characterObj.traits.trait))
-		{
-			characterObj.traits.trait = arrayify(characterObj.traits.trait);
-			importTraits(R20character,characterObj.traits.trait);
-		}
+		// Import Validation - (TODO If Required)
 
-		if (!_.isUndefined(characterObj.skillabilities.special))
-		{
-			characterObj.skillabilities.special = arrayify(characterObj.skillabilities.special);
-			importSkillAbilities(R20character,characterObj.skillabilities.special);
-		}
-
-		if (!_.isUndefined(characterObj.attack.special))
-		{
-			characterObj.attack.special = arrayify(characterObj.attack.special);
-			importRacialTraits(R20character,characterObj.attack.special);
-		}
-
-		if (!_.isUndefined(characterObj.skillabilities.special))
-		{
-			characterObj.skillabilities.special = arrayify(characterObj.skillabilities.special);
-			importRacialBonus(R20character,characterObj.skillabilities.special);
-		}
-
-		if (!_.isUndefined(characterObj.melee.weapon))
-		{
-			characterObj.melee.weapon = arrayify(characterObj.melee.weapon);
-			importMelee(R20character,characterObj.melee.weapon);
-		}
-
-		if (!_.isUndefined(characterObj.ranged.weapon))
-		{
-			characterObj.ranged.weapon = arrayify(characterObj.ranged.weapon);
-			importRanged(R20character,characterObj.ranged.weapon);
-		}
-
-		if (!_.isUndefined(characterObj.defenses.armor))
-		{
-			characterObj.defenses.armor = arrayify(characterObj.defenses.armor);
-			importArmor(R20character,characterObj.defenses.armor);
-		}
-
-		if (!_.isUndefined(characterObj.gear.item))
-		{
-			characterObj.gear.item = arrayify(characterObj.gear.item);
-			importGear(R20character,characterObj.gear.item);
-		}
-
-		// Set max hp; remove hp from Con mod first, since the sheet will add that in
-		// Since the XML doesn't break this down by class, add it all to class 0
-		var level = calcHitDice(characterObj.health._hitdice);
-		setAttr(R20character,"class-0-hp",(parseNum(characterObj.health._hitpoints) - (level * parseNum(characterObj.attributes.attribute[2].attrbonus._modified))));
-		importInit(R20character,characterObj.initiative);
-		var racialHD = level - parseNum(characterObj.classes._level);
-		if (racialHD > 0)
-			setAttr(R20character,"class-5-level",racialHD);
-
-		var size = getSizeMod(characterObj.size._name);
-		setAttr(R20character,"size",size);
-
-		characterObj.penalties.penalty = arrayify(characterObj.penalties.penalty);
-		var ACP = importPenalties(R20character,characterObj.penalties.penalty);
-
-		characterObj.skills.skill = arrayify(characterObj.skills.skill);
-		importSkills(R20character,characterObj.skills.skill,size,ACP);
-		
-		if (!_.isUndefined(characterObj.senses.special))
-		{
-			characterObj.senses.special = arrayify(characterObj.senses.special);
-			setAttr(R20character,"vision", buildShortNameList(characterObj.senses.special));
-		}
-
-		if (!_.isUndefined(characterObj.damagereduction.special))
-		{
-			characterObj.damagereduction.special = arrayify(characterObj.damagereduction.special);
-			setAttr(R20character,"DR", buildShortNameList(characterObj.damagereduction.special));
-		}
-
-		if (!_.isUndefined(characterObj.resistances.special))
-		{
-			characterObj.resistances.special = arrayify(characterObj.resistances.special);
-			setAttr(R20character,"resistances", buildShortNameList(characterObj.resistances.special));
-		}
-
-		if (!_.isUndefined(characterObj.immunities.special))
-		{
-			characterObj.immunities.special = arrayify(characterObj.immunities.special);
-			setAttr(R20character,"immunities", buildShortNameList(characterObj.immunities.special));
-		}
-
-		if (!_.isUndefined(characterObj.weaknesses.special))
-		{
-			characterObj.weaknesses.special = arrayify(characterObj.weaknesses.special);
-			setAttr(R20character,"weaknesses", buildShortNameList(characterObj.weaknesses.special));
-		}
-		if (!_.isUndefined(characterObj.languages.language))
-		{
-			characterObj.languages.language = arrayify(characterObj.languages.language);
-			setAttr(R20character,"languages", buildNameList(characterObj.languages.language));
-		}
-
-		if (!_.isUndefined(characterObj.npc))
-		{
-			setAttr(R20character,"is_npc", "0");
-			R20character.set("bio", characterObj.npc.description);			
-		} else {
-			setAttr(R20character,"is_npc", "1");
-			R20character.set("bio", characterObj.personal.description);
-		}
-
-		setAttr(R20character,"player-name",characterObj._playername);
-		setAttr(R20character,"deity",characterObj.deity._name);
-		setAttr(R20character,"race",characterObj.race._racetext.substr(0,1).toUpperCase()+characterObj.race._racetext.substr(1,1000));
-		setAttr(R20character,"alignment",characterObj.alignment._name);
-		setAttr(R20character,"gender",characterObj.personal._gender);
-		setAttr(R20character,"age",characterObj.personal._age);
-		setAttr(R20character,"height",characterObj.personal.charheight._text);
-		setAttr(R20character,"weight",characterObj.personal.charweight._text);
-		setAttr(R20character,"hair",characterObj.personal._hair);
-		setAttr(R20character,"eyes",characterObj.personal._eyes);
-		setAttr(R20character,"skin",characterObj.personal._skin);
-
-		setAttr(R20character,"speed-base",characterObj.movement.basespeed._text);
-
-		setAttr(R20character,"CP",characterObj.money._cp);
-		setAttr(R20character,"SP",characterObj.money._sp);
-		setAttr(R20character,"GP",characterObj.money._gp);
-		setAttr(R20character,"PP",characterObj.money._pp);
-
-		setAttr(R20character,"npc-cr",characterObj.challengerating._text.replace("CR ",""));
-		setAttr(R20character,"npc-xp",characterObj.xpaward._value);
-		
-		if (!_.isUndefined(characterObj.favoredclasses.favoredclass))
-		{
-			characterObj.favoredclasses.favoredclass = arrayify(characterObj.favoredclasses.favoredclass);
-			setAttr(R20character,"class-favored", buildNameList(characterObj.favoredclasses.favoredclass));
-		}
-		
-		if (token !== null)
-			token.set("represents",R20character.get("_id"));
-			
-		sendChat("HL-Import", "**"+characterObj._name + "** import complete!");
-
+		// Import Minions
 		if (!_.isUndefined(characterObj.minions.character))
 		{
 			characterObj.minions.character = arrayify(characterObj.minions.character);
 			characterObj.minions.character.forEach(function(charObj) { importCharacter(charObj,null); });
 		}
 
-				createObj("ability", {
-			name: name,
-			description: desc,
-			action: action,
-			istokenaction: isTokenAct,
-			characterid: charId
-			});
+		// Complete token setup
+		if (token !== null)
+			token.set("represents",R20character.get("_id"));			
+		sendChat("HL-Import", "**"+characterObj._name + "** import complete!");
 	},
 
     checkInstall = function() {    
         log('-=> HL-Import v'+version+' <=-  ['+(new Date(lastUpdate*1000))+']');
 	},
+
 	HandleInput = function(msg) {
 		"use strict";
 

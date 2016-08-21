@@ -12,5 +12,6 @@ v0.63.00
 	- Skill abilities
 	- Armor
 	- Gear
+	- Corrected PC/NPC Setting
 - Auto populate token macro bar
 - Auto populate AC and HP token status bars
