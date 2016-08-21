@@ -1,0 +1,16 @@
+A script for importing characters from Hero Lab to the Pathfinder character sheet; visit the forum thread for usage: https://wiki.roll20.net/Script:HL-Import.
+
+Change Log:
+
+v0.63.00
+- Changed plugin numbering scheme to match Pathfinder character sheet version number
+- Added import support for:
+	- Melee weapons
+	- Ranged weapons
+	- Racial traits
+	- Racial bonuses
+	- Skill abilities
+	- Armor
+	- Gear
+- Auto populate token macro bar
+- Auto populate AC and HP token status bars

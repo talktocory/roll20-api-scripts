@@ -1,10 +1,10 @@
 {
 	"name": "Pathfinder HeroLab Character Import",
 	"script": "HL-Import.js",
-	"version": "0.5",
+	"version": "0.62",
 	"description": "A script for importing characters from Hero Lab to the Pathfinder character sheet; visit the forum thread for usage: https://wiki.roll20.net/Script:HL-Import",
-	"authors": "James W.",
-	"roll20userid": "92730",
+	"authors": "James W., Cory G.",
+	"roll20userid": "92730, 1109365",
 	"useroptions": [],
 	"dependencies": [],
 	"modifies": {
@@ -17,5 +17,5 @@
 		"graphic.represents": "read,write"
 	},
 	"conflicts": [],
-	"previousversions": [ ]
+	"previousversions": ["0.5"]
 }
