@@ -1029,8 +1029,10 @@ var HLImport = HLImport || (function() {
 
 		if (!_.isUndefined(characterObj.npc))
 		{
+			setAttr(R20character,"is_npc", "0");
 			R20character.set("bio", characterObj.npc.description);			
 		} else {
+			setAttr(R20character,"is_npc", "1");
 			R20character.set("bio", characterObj.personal.description);
 		}
 
