@@ -904,14 +904,17 @@ var HLImport = HLImport || (function() {
 			// Search for a repeating spell with the same level, name, and spellclass; if not found, make new row
 			level = parseNum(spells[i]._level);
 			repeatPrefix = "repeating_lvl-"+level+"-spells_";
-			spellClass = "@{spellclass-"+_.indexOf(spellClassesKeys,spells[i]._class);
+			var spellClassIndex = _.indexOf(spellClassesKeys,spells[i]._class);
+			if (spellClassIndex < 0){
+				spellClassIndex = 0;  
+			}
 			spellName = spells[i]._name.replace(/\(x\d+\)/,"").trim();
 			rowID = getOrMakeSpellRowID(character,repeatPrefix,spellName,spellClass);
 			// Update prefix with ID
 			repeatPrefix = repeatPrefix + rowID;
 			
 			setAttr(character,repeatPrefix+"_name",spellName);
-			setAttr(character,repeatPrefix+"_spellclass",spellClass);
+			setAttr(character,repeatPrefix+"_spellclass_number",spellClassIndex);
 			setAttr(character,repeatPrefix+"_components",spells[i]._componenttext.replace("Divine Focus", "DF").replace("Focus","F").replace("Material","M").replace("Verbal","V").replace("Somatic","S").replace(" or ","/"));
 			setAttr(character,repeatPrefix+"_range",spells[i]._range);
 			setAttr(character,repeatPrefix+"_duration",spells[i]._duration);
