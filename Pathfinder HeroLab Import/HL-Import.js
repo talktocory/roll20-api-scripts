@@ -210,6 +210,23 @@ var HLImport = HLImport || (function() {
 	},
 
 	/**
+	 * Gets an attribute on the character.
+	 * 
+	 * @param  {} character Roll20 Character Object
+	 * @param  {} attribute Attribute Name
+	 */
+	getAttr = function (character,attribute)
+	{
+		var attrObjs = findObjs({ _type: "attribute", _characterid: character.get("_id"), name: attribute });
+
+		if (attrObjs.length > 0){
+			return attrObjs[0].get("current");
+		} else {
+			return "";
+		}
+	},
+
+	/**
 	 * Adds a macro and button to the character.
 	 * 
 	 * @param  {} character Roll20 Character Object
@@ -802,6 +819,7 @@ var HLImport = HLImport || (function() {
 		for (i = 0; i < spellclasses.length; i++)
 		{
 			var spellClass = spellclasses[i];
+
 			// Only 3 spellclasses on character sheet, so if they somehow have more...
 			if (spellClassIndex >= 3)
 				return spellClassesList;
@@ -812,6 +830,9 @@ var HLImport = HLImport || (function() {
 			{
 				casterlevel = parseNum(classes[spellClassName]._casterlevel);
 				setAttr(character,"spellclass-"+spellClassIndex,classIndex);
+				setAttr(character,"spellclass-"+spellClassIndex + "-name",spellClassName);
+				setAttr(character,"spellclass-"+spellClassIndex + "-level",casterlevel);
+
 				setAttr(character,"spellclass-"+spellClassIndex+"-level-misc", casterlevel - parseNum(classes[spellClassName]._level));
 				
 				if (!_.isUndefined(classes[spellClassName].arcanespellfailure))
@@ -883,7 +904,7 @@ var HLImport = HLImport || (function() {
 			// Search for a repeating spell with the same level, name, and spellclass; if not found, make new row
 			level = parseNum(spells[i]._level);
 			repeatPrefix = "repeating_lvl-"+level+"-spells_";
-			spellClass = "@{spellclass-"+_.indexOf(spellClassesKeys,spells[i]._class)+"-name}";
+			spellClass = "@{spellclass-"+_.indexOf(spellClassesKeys,spells[i]._class);
 			spellName = spells[i]._name.replace(/\(x\d+\)/,"").trim();
 			rowID = getOrMakeSpellRowID(character,repeatPrefix,spellName,spellClass);
 			// Update prefix with ID
@@ -1297,9 +1318,29 @@ var HLImport = HLImport || (function() {
 			characterObj.minions.character.forEach(function(charObj) { importCharacter(charObj,null); });
 		}
 
+		// Add Macro Buttons
+		addAbility(R20character, "Initiative", "Roll for Initiative", "%{selected|Roll-for-initiative}", true);
+		addAbility(R20character, "Perception", "Perception Check", "%{selected|Perception-Check}", true);
+		addAbility(R20character, "Saves", "Save Checks", "&{template:pf_generic} {{character_name=@{selected|character_name}}} {{name=Saves}} {{?{Saves| Fort, Fort= [[ 1d20+ [[ @{selected|fort} ]] ]] | Ref, Ref= [[ 1d20+ [[ @{selected|ref} ]] ]] | Will, Will= [[ 1d20+ [[ @{selected|will} ]] ]]}}} ", true);
+		addAbility(R20character, "Skills", "Skill Check", "&{template:pf_generic} {{character_name=@{selected|character_name}}} {{name=Skill Check}} {{?{Choose a Skill(* training not required)| *Acrobatics (+@{selected|Acrobatics}), [Acrobatics](http://www.d20pfsrd.com/skills/acrobatics) =[[ 1d20+ [[ @{selected|Acrobatics} ]] ]] | *Appraise (+@{selected|Appraise}),[Appraise](http://www.d20pfsrd.com/skills/appraise)=[[ 1d20+ [[ @{selected|Appraise} ]] ]] | *Artistry (+@{selected|Artistry}), [Artistry](http://www.d20pfsrd.com/skills/background-skills#TOC-Artistry-Int-) @{selected|Artistry-name}=[[ 1d20+ [[ @{selected|Artistry} ]] ]] | *Bluff (+@{selected|Bluff}), [Bluff](http://www.d20pfsrd.com/skills/bluff)=[[ 1d20+ [[ @{selected|Bluff} ]] ]] | *Climb (+@{selected|Climb}), [Climb](http://www.d20pfsrd.com/skills/climb)=[[ 1d20+ [[ @{selected|Climb} ]] ]] | *Craft  @{selected|Craft-name} (+@{selected|Craft}), [Craft](http://www.d20pfsrd.com/skills/craft) @{selected|Craft-name}=[[ 1d20+ [[ @{selected|Craft} ]] ]] | *Diplomacy (+@{selected|Diplomacy}), [Diplomacy](http://www.d20pfsrd.com/skills/diplomacy)=[[ 1d20+ [[ @{selected|Diplomacy} ]] ]] | Disable Device (+@{selected|Disable-Device}), [Disable Device](http://www.d20pfsrd.com/skills/disable-device)=[[ 1d20+ [[ @{selected|Disable-Device} ]] ]] | *Disguise (+@{selected|Disguise}), [Disguise](http://www.d20pfsrd.com/skills/disguise)=[[ 1d20+ [[ @{selected|Disguise} ]] ]] | *Escape Artist (+@{selected|Escape-Artist}), [Escape Artist](http://www.d20pfsrd.com/skills/escape-artist)=[[ 1d20+ [[ @{selected|Escape-Artist} ]] ]] | *Fly (+@{selected|Fly}), [Fly](http://www.d20pfsrd.com/skills/fly)=[[ 1d20+ [[ @{selected|Fly} ]] ]] |  Handle Animal (+@{selected|Handle-Animal}), [Handle Animal](http://www.d20pfsrd.com/skills/handle-animal)=[[ 1d20+ [[ @{selected|Handle-Animal} ]] ]] | *Heal (+@{selected|Heal}), [Heal](http://www.d20pfsrd.com/skills/acrobatics)=[[ 1d20+ [[ @{selected|Heal} ]] ]] | *Intimidate (+@{selected|Intimidate}), [Intimidate](http://www.d20pfsrd.com/skills/intimidate)=[[ 1d20+ [[ @{selected|Intimidate} ]] ]] |  Knowledge Arcana (+@{selected|Knowledge-Arcana}), [Knowledge Arcana](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Arcana} ]] ]] |  Knowledge Dungeoneering (+@{selected|Knowledge-Dungeoneering}), [Knowledge Dungeoneering](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Dungeoneering} ]] ]] |  Knowledge Engineering (+@{selected|Knowledge-Engineering}), [Knowledge Engineering](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Engineering} ]] ]] |  Knowledge Geography (+@{selected|Knowledge-Geography}), [Knowledge Geography](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Geography} ]] ]] |  Knowledge History (+@{selected|Knowledge-History}), [Knowledge History](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-History} ]] ]] | Knowledge Local (+@{selected|Knowledge-Local}), [Knowledge Local](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Local} ]] ]] |  Knowledge Nature (+@{selected|Knowledge-Nature}), [Knowledge Nature](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Nature} ]] ]] |  Knowledge Nobility (+@{selected|Knowledge-Nobility}), [Knowledge Nobility](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Nobility} ]] ]] |  Knowledge Planes (+@{selected|Knowledge-Planes}), [Knowledge Planes](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Planes} ]] ]] |  Knowledge Religion (+@{selected|Knowledge-Religion}), [Knowledge Religion](http://www.d20pfsrd.com/skills/knowledge)=[[ 1d20+ [[ @{selected|Knowledge-Religion} ]] ]] |  Linguistics (+@{selected|Linguistics}),[Linguistics](http://www.d20pfsrd.com/skills/linguistics)=[[ 1d20+ [[ @{selected|Linguistics} ]] ]] |  Lore @{selected|Lore-name} (+@{selected|Lore}), [Lore](http://www.d20pfsrd.com/skills/acrobatics)(@{selected|Lore-name})=[[ 1d20+ [[ @{selected|Lore} ]] ]] | *Perception (+@{selected|Perception}),[Perception](http://www.d20pfsrd.com/skills/perception)=[[ 1d20+ [[ @{selected|Perception} ]] ]] | *Perform @{selected|Perform-name} (+@{selected|Perform}), [Perform](http://www.d20pfsrd.com/skills/perform) (@{selected|Perform-name})=[[ 1d20+ [[ @{selected|Perform} ]] ]] |  Profession @{selected|Profession-name} (+@{selected|Profession}), [Profession](http://www.d20pfsrd.com/skills/profession) (@{selected|Profession-name})=[[ 1d20+ [[ @{selected|Profession} ]] ]] | *Ride (+@{selected|Ride}),[Ride](http://www.d20pfsrd.com/skills/ride)=[[ 1d20+ [[ @{selected|Ride} ]] ]] | *Sense Motive (+@{selected|Sense-Motive}),[Sense Motive](http://www.d20pfsrd.com/skills/sense-motive)=[[ 1d20+ [[ @{selected|Sense-Motive} ]] ]] |  Sleight of Hand (+@{selected|Sleight-of-Hand}), [Sleight of Hand](http://www.d20pfsrd.com/skills/sleight-of-hand)=[[ 1d20+ [[ @{selected|Sleight-of-Hand} ]] ]] |  Spellcraft (+@{selected|Spellcraft}), [Spellcraft](http://www.d20pfsrd.com/skills/spellcraft)=[[ 1d20+ [[ @{selected|Spellcraft} ]] ]] | *Stealth (+@{selected|Stealth}),[Stealth](http://www.d20pfsrd.com/skills/stealth)=[[ 1d20+ [[ @{selected|Stealth} ]] ]] | *Survival (+@{selected|Survival}), [Survival](http://www.d20pfsrd.com/skills/survival)=[[ 1d20+ [[ @{selected|Survival} ]] ]] | *Swim (+@{selected|Swim}),[Swim](http://www.d20pfsrd.com/skills/swim)=[[ 1d20+ [[ @{selected|Swim} ]] ]] |  Use Magic Device (+@{selected|Use-Magic-Device}), [Use Magic Device](http://www.d20pfsrd.com/skills/use-magic-device)=[[ 1d20+ [[ @{selected|Use-Magic-Device} ]] ]] }}}", true);
+		if (!_.isUndefined(characterObj.spellclasses.spellclass)){
+			if (characterObj._role === "npc") {
+				addAbility(R20character, "Spells", "Spells", "@{spellclass-0-book-npc}", true);			
+			} else {
+				addAbility(R20character, "Spells", "Spells", "@{spellclass-0-book}", true);
+			}
+		}
+		if (characterObj._role === "npc") {
+			addAbility(R20character, "Attacks", "Attacks","@{attacks-macro-npc}", true);
+		} else {
+			addAbility(R20character, "Attacks", "Attacks","@{attacks-macro}", true);
+		}
+
 		// Complete token setup
-		if (token !== null)
-			token.set("represents",R20character.get("_id"));			
+		if (token !== null){
+			token.set("represents",R20character.get("_id"));
+		}
+						
 		sendChat("HL-Import", "**"+characterObj._name + "** import complete!");
 	},
 

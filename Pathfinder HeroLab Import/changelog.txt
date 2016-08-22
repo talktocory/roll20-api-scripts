@@ -3,15 +3,65 @@ A script for importing characters from Hero Lab to the Pathfinder character shee
 Change Log:
 
 v0.63.00
-- Changed plugin numbering scheme to match Pathfinder character sheet version number
-- Added import support for:
-	- Melee weapons
-	- Ranged weapons
-	- Racial traits
-	- Racial bonuses
-	- Skill abilities
+- Changed plugin numbering scheme to match corresponding Pathfinder character sheet version number
+- Elements Being Imported:
+	- Alignment Attributes
 	- Armor
+	- Armor Class (Not required.  Calculated by character sheet.)
+	- Attacks
+	- Character Attributes
+	- Challenge Rating
+	- Classes
+	- Combat Maneuvers (Not required.  Calculated by character sheet.)
+	- Damage Reduction
+	- Deity
+	- Encumberance (Not required.  Calculated by character sheet.)
+	- Favoured Classes
+	- Feats
 	- Gear
-	- Corrected PC/NPC Setting
+	- Health
+	- Immunities
+	- Initiative
+	- Languages
+	- Melee Weapons
+	- Minions
+	- Money
+	- Movement
+	- Other Specials
+	- Penalties
+	- Personal
+	- Race Attributes
+	- Ranged Weapons
+	- Resistances
+	- Saves
+	- Senses
+	- Size
+	- Skill abilities
+	- Skills
+	- Special Defenses
+	- Spells
+	- Traits
+	- Types and SubTypes
+	- Weaknesses
+	- XP
+	- XP Awarded
+- Elements Not Currently Being Imported:
+	- Animal Tricks
+	- Auras
+	- Book info
+	- Factions
+	- Flaws
+	- Hero Points
+	- Images
+	- Journals
+	- Magic Items
+	- Skill Tricks
+	- Spelllike abilities
+	- Templates
+	- Tracked Resources
+	- Validation
 - Auto populate token macro bar
 - Auto populate AC and HP token status bars
+
+v0.63.00
+- Initial release
